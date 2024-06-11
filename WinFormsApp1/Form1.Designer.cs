@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
-            item= new Panel();
             MoveTimer = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -63,7 +62,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4F));
-            tableLayoutPanel1.Controls.Add(item, 14, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -95,17 +93,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 4F));
             tableLayoutPanel1.Size = new Size(684, 661);
             tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            item.BackColor = Color.Lime;
-            item.Dock = DockStyle.Fill;
-            item.Location = new Point(381, 81);
-            item.Name = "panel1";
-            item.Size = new Size(21, 20);
-            item.TabIndex = 0;
+            
 
-            Snake.Add(item);
             // 
             // MoveTimer
             // 
@@ -135,7 +124,6 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel item;
         private System.Windows.Forms.Timer MoveTimer;
         private enum _MoveArrow
         {
@@ -146,7 +134,10 @@
             Left
         }
         private _MoveArrow _TempArrow;
-        private Point _TempPoint;
-        private List<Panel> Snake = new List<Panel>();
+        private Point _TempPoin;
     }
 }
+        enum Status
+        {
+            HEAD, BODY, APPLE, BORDDER, TAIL
+        }
